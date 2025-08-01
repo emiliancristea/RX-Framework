@@ -1,0 +1,71 @@
+# Rust
+/target/
+**/*.rs.bk
+*.pdb
+
+# Cargo
+Cargo.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+*.exe
+!.exe # but keep any .exe files that may be important
+!Cargo.lock # but keep Cargo.lock for applications
+
+# Logs
+*.log
+logs/
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Build artifacts
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Local configuration
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Test artifacts
+test-results/
+coverage/
+
+# Documentation build
+docs/_build/
+site/
+
+# Large test files
+CxFrameworkPathsWithContent_*.txt
+SpecificCxFrameworkPaths_*.txt
+rustup-init.exe
+CX_Framework_Test_Report.md

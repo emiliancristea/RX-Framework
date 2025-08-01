@@ -1,0 +1,45 @@
+[package]
+name = "rx-framework"
+version = "0.1.0"
+edition = "2021"
+authors = ["Emilian Cristea"]
+license = "MIT"
+description = "A lightweight, modern cross-platform GUI framework for Rust"
+repository = "https://github.com/emiliancristea/RX-Framework"
+readme = "README.md"
+keywords = ["gui", "ui", "cross-platform", "desktop", "framework"]
+categories = ["gui", "graphics", "api-bindings"]
+
+[dependencies]
+# Platform-specific dependencies
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3", features = ["winuser", "wingdi", "libloaderapi", "processthreadsapi", "winbase", "windef"] }
+
+[target.'cfg(all(unix, not(target_os = "macos")))'.dependencies]
+x11 = { version = "2.21", features = ["xlib"] }
+libc = "0.2"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+cocoa = "0.25"
+objc = "0.2"
+
+# Optional features for future expansion
+[features]
+default = []
+opengl = []
+vulkan = []
+metal = []
+
+[lib]
+name = "rx"
+crate-type = ["lib", "cdylib"]
+
+[[example]]
+name = "basic_window"
+path = "examples/basic_window.rs"
+
+[[example]]
+name = "button_demo"
+path = "examples/button_demo.rs"
+
+[dev-dependencies]
